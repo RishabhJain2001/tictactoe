@@ -21,13 +21,16 @@ const play = ()=>{
         if((boxTexts[e[0]].innerText === boxTexts[e[1]].innerText ) && (boxTexts[e[2]].innerText === boxTexts[e[1]].innerText ) && (boxTexts[e[2]].innerText!=="" )){
             document.querySelector(".turn").innerText = boxTexts[e[0]].innerText + " won";
             gameWon=true;
+            if(gameWon){
+                document.querySelector(".container").style.display = "none";
+            }
             document.querySelector(".winner").style.width = "250px";
             if(screen.width > 800){
             document.querySelector(".line").style.width = "30vw";
             document.querySelector(".line").style.transform = `translate(${e[3]}vh,${e[4]}vh) rotate(${e[5]}deg)`;
             }
             else{
-                document.querySelector(".line").style.width = "0";
+                document.querySelector(".line").style.width = "0vw";
             }
         }
         
@@ -65,5 +68,6 @@ reset.addEventListener("click",()=>{
     gameWon=false;
     document.querySelector(".turn").innerHTML = turn + " Your Turn ";
     document.querySelector(".line").style.width = "0vw";
+        document.querySelector(".container").style.display = "grid";
     count=0;
 })
