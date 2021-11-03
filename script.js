@@ -27,8 +27,7 @@ const play = ()=>{
             document.querySelector(".line").style.transform = `translate(${e[3]}vh,${e[4]}vh) rotate(${e[5]}deg)`;
             }
             else{
-                document.querySelector(".line").style.width = "60vw";
-                document.querySelector(".line").style.transform = `translate(${e[3]/2}vh,${e[4]/2}vh) rotate(${e[5]}deg)`;
+                document.querySelector(".line").style.width = "0";
             }
         }
         
